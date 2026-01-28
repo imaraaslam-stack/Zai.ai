@@ -48,7 +48,7 @@ export function useCreateTopic() {
   const [, setLocation] = useLocation();
 
   return useMutation({
-    mutationFn: async (data: InsertTopic) => {
+    mutationFn: async (data: { title: string; content: string }) => {
       const validated = api.topics.create.input.parse(data);
       const res = await fetch(api.topics.create.path, {
         method: api.topics.create.method,

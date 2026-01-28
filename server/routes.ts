@@ -35,7 +35,8 @@ export async function registerRoutes(
       const userId = (req.user as any).claims.sub;
 
       const topic = await storage.createTopic({
-        ...input,
+        title: input.title,
+        originalContent: input.content,
         userId,
         summary: input.content.slice(0, 100) + "...", // Placeholder summary
       });
