@@ -1,14 +1,3 @@
 {
-  "version": 2,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/html"
-        }
-      ]
-    }
-  ]
+  "rewrite": [{ "source": "/(.*)", "destination": "api/index" }]
 }
